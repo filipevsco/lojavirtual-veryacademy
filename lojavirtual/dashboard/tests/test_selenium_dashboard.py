@@ -2,11 +2,8 @@ import pytest
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-#
-# def test_criar_novo_usuario_admin(criar_usuario_admin):
-#     assert criar_usuario_admin.__str__() == "admin"
 
-
+@pytest.mark.selenium
 def test_dashboard_admin_Login(live_server, db_fixture_setup, chrome_navegador_instancia):
 
     navegador = chrome_navegador_instancia
