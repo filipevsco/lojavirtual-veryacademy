@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # Aplicações locais
     "lojavirtual.dashboard",
     "lojavirtual.inventario",
+    # Aplicações externas
+    "mptt",
 ]
 
 MIDDLEWARE = [

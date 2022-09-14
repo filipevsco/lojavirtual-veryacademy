@@ -8,7 +8,7 @@ from lojavirtual.inventario import models
 @pytest.mark.parametrize(
     "id, name, slug, is_active",
     [
-        (1, "fashion", "fashoin", 1),
+        (1, "fashion", "fashion", 1),
         (18, "trainers", "trainers", 1),
         (35, "baseball", "baseball", 1),
     ],
@@ -25,7 +25,7 @@ def test_inventario_categoria_dbfixture(
 @pytest.mark.parametrize(
     "name, slug, is_active",
     [
-        ("fashion", "fashoin", 1),
+        ("fashion", "fashion", 1),
         ("trainers", "trainers", 1),
         ("baseball", "baseball", 1),
     ],
