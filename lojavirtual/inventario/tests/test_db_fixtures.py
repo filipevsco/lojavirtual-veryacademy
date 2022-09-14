@@ -22,6 +22,7 @@ def test_inventario_categoria_dbfixture(
     assert result.is_active == is_active
 
 
+@pytest.mark.dbfixture
 @pytest.mark.parametrize(
     "name, slug, is_active",
     [
