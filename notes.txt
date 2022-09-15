@@ -5,6 +5,11 @@
 
 >pytest --pdb : qndo teste falhar para o debuguer exatamente na falha.
 
+>pytest -v : verboso
+
+>pytest -k " " : roda teste que contenham a keyword digitada
+
+
 # REPORTS
 
 >pytest --juntxml report_1.xml : imprime um arquivo col resultado dos testes
