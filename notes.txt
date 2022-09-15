@@ -14,3 +14,6 @@ pytest -s : mostra as saidas no console
 # REPORTS
 
 >pytest --juntxml report_1.xml : imprime um arquivo col resultado dos testes
+
+## MARK
+Sao separacao de testes por grupo [tag]
