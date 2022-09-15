@@ -9,6 +9,7 @@
 
 >pytest -k " " : roda teste que contenham a keyword digitada
 
+pytest -s : mostra as saidas no console
 
 # REPORTS
 
