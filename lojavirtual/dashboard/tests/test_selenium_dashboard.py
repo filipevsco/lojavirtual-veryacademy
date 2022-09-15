@@ -3,11 +3,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-@pytest.mark.selenium
+@pytest.mark.selenium  # marcador pytest 'selenium'
 def test_dashboard_admin_Login(
     live_server, db_fixture_setup, chrome_navegador_instancia
 ):
 
+    """
+    Teste de login no admin Django.
+    1. Pytest carrega 3 fixtures:
+        - live_server: runserver do django. Através dele consegue a url da aplicação e concatena com "/admin/login/"
+        - db_fixture_setup: insere os dados de superuser no DB para proporcionar teste pelo selenium.
+        - chrome_navegador_instancia: cria instancia do navegador chrome pelo selenium
+    """
     navegador = chrome_navegador_instancia
 
     navegador.get(("%s%s" % (live_server.url, "/admin/login/")))

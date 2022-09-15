@@ -22,3 +22,11 @@ Sao separacao de testes por grupo [tag]
 def test_...
 
 >pytest -m tag
+
+
+######## FAKER
+# cria dados ficticios sem eu me preocupar em digitar nomes, etc... facil pra testar
+
+fake = Faker()
+
+>fake.pystr() : string fake
