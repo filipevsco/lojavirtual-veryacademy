@@ -1,3 +1,7 @@
 [pytest]
 
->
+>pytest -x : para no primeiro erro
+>pytest --ff : quabdo teste falhar ele roda primeiro na proxima vez (fail first)
+
+>pytest --pdb : qndo teste falhar para o debuguer exatamente na falha.
+
