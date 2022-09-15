@@ -12,7 +12,7 @@ class CategoriaFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.Categoria
 
-    name = fake.lexify(text="cat_name_??????")
+    name = factory.Sequence(lambda n: "cat_slug_%d" % n)
     slug = fake.lexify(text="cat_slug_??????")
 
 

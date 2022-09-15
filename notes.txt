@@ -30,3 +30,8 @@ def test_...
 fake = Faker()
 
 >fake.pystr() : string fake
+
+
+###### FACTORY BOY
+
+Cria objetos a partir de um modelo...
