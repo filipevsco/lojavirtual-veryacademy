@@ -18,4 +18,7 @@ pytest -s : mostra as saidas no console
 ## MARK
 Sao separacao de testes por grupo [tag]
 
+@mark.tag
+def test_...
+
 >pytest -m tag
