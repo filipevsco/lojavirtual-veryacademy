@@ -24,14 +24,6 @@ def test_...
 >pytest -m tag
 
 
-######## FAKER
-# cria dados ficticios sem eu me preocupar em digitar nomes, etc... facil pra testar
+### PARAMETRIZE
 
-fake = Faker()
-
->fake.pystr() : string fake
-
-
-###### FACTORY BOY
-
-Cria objetos a partir de um modelo...
+definir lista de dados para rodar nos testes
