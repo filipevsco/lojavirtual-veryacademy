@@ -27,3 +27,19 @@ def test_...
 ### PARAMETRIZE
 
 definir lista de dados para rodar nos testes
+@pytest.mark.parametrize(
+    "name, idade, is_active",
+    [
+        ("Filipe", 33, 1),
+        ("Joao", 55, 0),
+        ("Maria", 22, 1),
+    ],
+)
+def test_db(
+    db, db_fixture_setup, id, name, 
+is_active
+):
+    result = models.Category.objects.get(id=id)
+    assert result.name == name
+    assert result.idade == idade
+    assert result.is_active == is_active
