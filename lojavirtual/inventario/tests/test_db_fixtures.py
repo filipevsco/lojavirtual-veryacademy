@@ -1,6 +1,9 @@
 from cgitb import reset
+from itertools import count, product
 from pydoc import describe
+from sqlite3 import IntegrityError
 from time import strftime
+from unicodedata import category
 from unittest import result
 from venv import create
 
@@ -80,3 +83,20 @@ def test_inventario_db_produto_dbfixture(db, django_db_setup, id, web_id, name, 
     assert result.is_active == is_active
     assert result.created_at == created_at
     assert result.updated_at == updated_at
+
+
+def test_inventario_db_produto_uniqueness_integrity(db, product_factory):
+    new_web_id = product_factory.create(web_id=123456789)
+    with pytest.raises(IntegrityError)
+        product_factory.create(web_id=123456789)
+
+
+@pytest.mark.dbficture
+def test_inventory_db_product_insert_data(
+    db, product_factory, category_factory
+):
+
+    new_category = categorty_factory.create()
+    new_product = product_factory.create(category=(1, 36))
+    result_product_category = new_product.category.all().count()
+    assert "web_id_" in new_product.web_id
