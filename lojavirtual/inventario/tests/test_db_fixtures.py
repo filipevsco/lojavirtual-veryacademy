@@ -66,7 +66,7 @@ def test_inventorio_db_categoria_inserir_dados(
             "45434425", 
             "impact puse dance shoe", 
             "impact-puse-dance-shoe",
-            "Loremo nsectetur adpiscing elit. Pront porta, eros vel solicita. asre dois gol abacaxi",
+            "Loremo nsectetur adpiscing elit. Pront porta, eros vel solic assa das ita. asre dois gol abacaxi",
             1, 
             "2021-09-04 22:14:18", 
             "2021-09-04 22:14:18",
