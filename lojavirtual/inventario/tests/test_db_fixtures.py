@@ -56,7 +56,7 @@ def test_inventorio_db_categoria_inserir_dados(
             "45425810", 
             "widstar running sneakers", 
             "widstar-running-sneakers",
-            "Lorem ipsu, dolor sit amet, consectetur adpiscing elit. Pront porta, eros vel solicita.",
+            "Lorem ipsu, dolor sit amet, consectetur adpiscing elit. Pront porta, eros vel solissas ssdd cita.",
             1, 
             "2021-09-04 22:14:18", 
             "2021-09-04 22:14:18",
