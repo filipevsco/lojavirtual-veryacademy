@@ -1,4 +1,4 @@
 from django.contrib import admin
-from lojavirtual.inventario.models import Categoria
+from lojavirtual.inventory.models import Category
 
-admin.site.register(Categoria)
+admin.site.register(Category)

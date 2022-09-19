@@ -4,7 +4,7 @@ from django.core.management import call_command
 
 
 @pytest.fixture
-def criar_usuario_admin(django_user_model):
+def create_user_admin(django_user_model):
     """
     Retornar usuario admin
     """
@@ -20,4 +20,4 @@ def db_fixture_setup(django_db_setup, django_db_blocker):
     """
     with django_db_blocker.unblock():
         call_command("loaddata", "db_admin_fixture.json")
-        call_command("loaddata", "db_categoria_fixture.json")
+        call_command("loaddata", "db_category_fixture.json")

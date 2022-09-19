@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 
 
-class Categoria(MPTTModel):
+class Category(MPTTModel):
     """
     Tabela Categoria Inventorio implementada com MPTT
     """
@@ -15,7 +15,7 @@ class Categoria(MPTTModel):
         null=False,
         unique=False,
         blank=False,
-        verbose_name=_("nome categoria"),
+        verbose_name=_("category name"),
         help_text=_("format: required, max-100"),
     )
     slug = models.SlugField(
@@ -36,7 +36,7 @@ class Categoria(MPTTModel):
         null=True,
         blank=True,
         unique=False,
-        verbose_name=_("parent of categoria"),
+        verbose_name=_("parent of category"),
         help_text=_("format: not required"),
     )
 
@@ -44,7 +44,7 @@ class Categoria(MPTTModel):
         order_insertion_by = ["name"]
 
     class Meta:
-        verbose_name = _("produto categoria")
+        verbose_name = _("category porduct")
         verbose_name_plural = _("produto categorias")
 
     def __str__(self):

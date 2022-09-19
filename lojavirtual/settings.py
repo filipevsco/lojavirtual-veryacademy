@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Aplicações locais
     "lojavirtual.dashboard",
-    "lojavirtual.inventario",
+    "lojavirtual.inventory",
     "lojavirtual.demo",
     # Aplicações externas
     "mptt",

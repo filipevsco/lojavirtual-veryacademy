@@ -5,12 +5,12 @@ from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope="function")
-def chrome_navegador_instancia(request):
+def chrome_browser_instance(request):
     """
     Provide a selenium webdriver instance
     """
-    opcoes = Options()
-    opcoes.headless = False
-    navegador = webdriver.Chrome(options=opcoes)
-    yield navegador
-    navegador.close()
+    options = Options()
+    options.headless = False
+    browser = webdriver.Chrome(options=options)
+    yield browser
+    browser.close()
