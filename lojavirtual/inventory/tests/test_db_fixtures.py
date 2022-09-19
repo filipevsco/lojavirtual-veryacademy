@@ -33,7 +33,6 @@ def test_inventory_db_category_insert_data(
     db, category_factory, slug, is_active
 ):
     result = category_factory.create(slug=slug, is_active=is_active)
-
     assert result.slug == slug
     assert result.is_active == is_active
 
@@ -84,8 +83,8 @@ def test_inventory_db_product_dbfixture(
     assert result.slug == slug
     assert result.description == description
     assert result.is_active == is_active
-    assert result.created_at == created_at
-    assert result.updated_at == updated_at
+    assert result_created_at == created_at
+    assert result_updated_at == updated_at
 
 
 def test_inventory_db_product_uniqueness_integrity(db, product_factory):
