@@ -105,5 +105,5 @@ def test_inventory_db_product_insert_data(
 
 @pytest.mark.dbfixture
 @pytest.mark.parametrize(
-    "",
+    "id, ski, upc, product_type, product, brand, is_active, retail_price, store_price, sale_price, weight, created_at, updated_at",
     )
