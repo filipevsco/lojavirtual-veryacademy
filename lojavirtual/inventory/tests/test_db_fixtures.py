@@ -137,4 +137,38 @@ def test_inventory_db_product_insert_data(
             "2021-09-04 22:14:14",
             "2021-09-04 22:14:14",
         ),
-    ]
+    ],
+)
+def test_inventory_db_product_inventory_dataset(
+    db,
+    django_db_setup,
+    id,
+    sku,
+    upc,
+    product_type,
+    product,
+    brand,
+    is_active,
+    retail_price,
+    store_price,
+    sale_price,
+    weight,
+    created_at,
+    updated_at,
+):
+    result = models.ProductInventory.objects.get(id=id)
+    result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+    assert result.sku == sku
+    assert result.upc == upc
+    assert result.product_type.id == product_type
+    assert result.product.id == product
+    assert result.brand.id == brand
+    assert result.is_active == is_active
+    assert result.retail_price == retail_price
+    assert result.store_price == store_price
+    assert result.sale_price == sale_price
+    assert result.weight == weight
+    assert result.created_at == created_at
+    assert result.updated_at == updated_at
+        
