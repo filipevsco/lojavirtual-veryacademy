@@ -15,7 +15,7 @@
 
 ### 3. PREPARAÇÃO DOS TESTES (TDD)
 
-##### Pytest
+##### PYTEST
 
 1. Na pasta raiz do projeto criar o arquivo `pytest.ini`:
 ```
@@ -25,14 +25,26 @@ python_files = test_*.py
 ```
 2. Na pasta raiz do projeto criar o arquivo `conftest.py`;
 3. Na pasta raiz do projeto criar pasta `tests`;
-4. 
-
 
 #### SELENIUM
 
 Objetivo de testar o login admin pelo navegador.
 
 1. Criar uma pasta "tests" dentro da pasta `dashboard` e incluir arquivo `__init__.py`;
-2. Crar o arquivo `test_selenium_dashboard.py` para implementar testes;
+2. Crar o arquivo `test_selenium_dashboard.py` para implementar testes (necessita das _fixtures_ abaixo);
 3. Baixar `ChromeDriver` (talvez seja necessário configurar PATH do SO);
-4. Criar arquivo `selenium.py` na pasta `/tests` na raiz -> implementar **fixture** para instância do chrome.
+
+#### FIXTURES
+(@pytest.fixture)
+Na pasta `/tests` criar arquivos:
+  - `selenium.py` -> responável por criar instância do chrome browser;
+  - `fixtures.py` -> 
+
+
+Registrar arquivos no arquivo `conftest.py`:
+```
+python_pluguins = [
+  "lojavirtual.tests.selenium",
+  "lojavirtual.tests.fixtures",
+]
+```
