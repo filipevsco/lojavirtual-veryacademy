@@ -101,3 +101,9 @@ def test_inventory_db_product_insert_data(
     new_product = product_factory.create(category=(1, 2, 3, 4, 5))
     result_product_category = new_product.category.all()
     print(result_product_category)
+
+
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "",
+    )
