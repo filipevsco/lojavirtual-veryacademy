@@ -11,7 +11,7 @@
 3. Instalado django e iniciado um novo projeto `lojavirtual`;
 4. Instalado pytest, pytest-django, pytest-factoryboy, pytest-selenium;
 5. Gerado arquivo requirements.txt;
-6. Criando um novo app `dashboard` (dentro da pasta do projeto);
+6. Criando um novo app `dashboard` (dentro da pasta do projeto). Registrar no `settings.py` e corrigir `apps.py` (path);
 
 ### 3. PREPARAÇÃO DOS TESTES (TDD)
 
@@ -38,7 +38,7 @@ Objetivo de testar o login admin pelo navegador.
 (@pytest.fixture)
 Na pasta `/tests` criar arquivos:
   - `selenium.py` -> responável por criar instância do chrome browser;
-  - `fixtures.py` -> 
+  - `fixtures.py` -> Cria superuser(create_user_admin) e carregar **fixtures** de apps (db_fixture_setup); 
 
 
 Registrar arquivos no arquivo `conftest.py`:
@@ -47,4 +47,16 @@ python_pluguins = [
   "lojavirtual.tests.selenium",
   "lojavirtual.tests.fixtures",
 ]
+```
+Em cada app criar pasta `/fixtures` e criar arquivo `db_*****_fixture.json` -> responsável por dados do db.
+
+#### MARK
+(`@pytest.mark.****`)
+
+No arquivo `pytest.ini` registrar os **makerns**:
+
+```
+markers =
+    selenium: selenium test
+    dbfixture: database fixture tests
 ```
