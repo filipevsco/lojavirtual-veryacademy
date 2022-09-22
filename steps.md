@@ -64,5 +64,6 @@ markers =
 #### Inventory
 
 1. Criar novo app inventory;
-2. criar pasta terts dentro da pasta do app;
-3. 
+2. criar pasta tests dentro da pasta do app;
+3. criar arquivo 
+   'test_db_fixtures.py' -> testar db fixtures, insercao de dados (atraves de factoryboy)
