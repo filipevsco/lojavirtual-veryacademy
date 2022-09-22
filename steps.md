@@ -63,3 +63,6 @@ markers =
 
 #### Inventory
 
+1. Criar novo app inventory;
+2. criar pasta terts dentro da pasta do app;
+3. 
