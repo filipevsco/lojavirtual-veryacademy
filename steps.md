@@ -60,3 +60,6 @@ markers =
     selenium: selenium test
     dbfixture: database fixture tests
 ```
+
+#### Inventory
+
