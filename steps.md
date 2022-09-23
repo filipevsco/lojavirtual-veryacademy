@@ -67,3 +67,7 @@ markers =
 2. criar pasta tests dentro da pasta do app;
 3. criar arquivo 
    'test_db_fixtures.py' -> testar db fixtures, insercao de dados (atraves de factoryboy)
+
+#### FACTORY BOY
+
+"FAbrica" dados para testes
