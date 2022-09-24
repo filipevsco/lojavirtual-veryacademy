@@ -70,4 +70,4 @@ markers =
 
 #### FACTORY BOY
 
-"FAbrica" dados para testes
+plugin para fabricar dados automaticos para inserir no bsmco de dados
