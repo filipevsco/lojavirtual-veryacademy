@@ -71,3 +71,8 @@ markers =
 #### FACTORY BOY
 
 plugin para fabricar dados automaticos para inserir no bsmco de dados
+
+
+#### MPPT 
+
+criar models 
