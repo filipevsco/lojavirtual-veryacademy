@@ -75,4 +75,4 @@ plugin para fabricar dados automaticos para inserir no bsmco de dados
 
 #### MPPT 
 
-criar models 
+criar models com relacionamentos mais facilmente
