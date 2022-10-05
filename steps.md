@@ -70,7 +70,7 @@ markers =
 
 #### FACTORY BOY
 
-plugin para fabricar dados automaticos para inserir no bsmco de dados
+plugin para fabricar dados automaticamente com o objetivo de "popular" o banco de dados (principalmente para testes)
 
 
 #### MPPT 
