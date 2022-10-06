@@ -76,4 +76,5 @@ plugin para fabricar dados automaticamente com o objetivo de "popular" o banco d
 
 
 #### MPPT 
-criar models com relacionamentos mais facilmente
+[Modified Preorder Tree Traversal]
+MPTT é uma técnica para armazenar dados hierárquicos em um banco de dados. O objetivo é tornar as operações de recuperação muito eficientes.
