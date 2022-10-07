@@ -117,6 +117,39 @@ class Product(models.Model):
         return self.name
 
 
+class ProductType(models.Model):
+    """
+    Product type table
+    """
+
+    name = models.CharField(
+        max_lenght=255,
+        unique=True,
+        null=False,
+        blank=False,
+        verbose_name=_("format: required, unique, max-255"),
+        help_text=_("format: required, unique, max-255"),
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class Brand(models.Model):
+    """
+    Product Brand table
+    """
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        null=False,
+        blank=False,
+        verbose_name=_("brand name")
+        help_text=_("format: required, unique, max-255")
+    )
+
+
+
 class ProductInventory(models.Model):
 
     sku = models.CharField(
@@ -143,11 +176,6 @@ class ProductInventory(models.Model):
     )
     brand = models.ForeignKey(
         Brand, related_name="brand", on_delete=models.PROTECT
-    )
-    attribute_values = models.ManyToManyField(
-        ProductAttributeValue,
-        related_name="product_attribute_value",
-        through="ProductAttributeValues",
     )
     is_active = models.BooleanField(
         default=True,
