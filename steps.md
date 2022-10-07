@@ -82,4 +82,9 @@ MPTT é uma técnica para armazenar dados hierárquicos em um banco de dados. O 
 
 #### LOADING DATA FIXTURES 
 
-Criando um comando personalizado
+Criando um comando personalizado.
+
+1. Criar um novo app django. Nesse caso nomeado como `demo`;
+2. Excluir arquivos inúteis como: `views.py`, `tests.py`, `models.py` e `admin.py`;
+3. Criar novas pastas dentro da pasta `demo` nomeada como `/management/commands/`;
+4. Criar arquivo `load-fixtures.py` dentro da pasta commands;
