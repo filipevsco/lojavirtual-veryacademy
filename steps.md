@@ -64,7 +64,7 @@ markers =
 ```
 
 
-#### Inventory
+#### INVENTORY
 
 1. Criar novo app inventory;
 2. criar pasta `/tests` dentro da pasta do app;
@@ -78,3 +78,8 @@ plugin para fabricar dados automaticamente com o objetivo de "popular" o banco d
 #### MPPT 
 [Modified Preorder Tree Traversal]
 MPTT é uma técnica para armazenar dados hierárquicos em um banco de dados. O objetivo é tornar as operações de recuperação muito eficientes.
+
+
+#### LOADING DATA FIXTURES 
+
+Criando um comando personalizado
