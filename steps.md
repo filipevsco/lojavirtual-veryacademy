@@ -92,3 +92,4 @@ sequência de comandos que queremos executar ao digitar `> python manage.py load
   Dentro deste arquivo devemos importar a função `call-command` de django.core.management e
   importar também a classe `BaseCommand`;
 5. Criamos a classe Command herdando de BaseCommand para chamar todas os comandos que queremos rodar.
+

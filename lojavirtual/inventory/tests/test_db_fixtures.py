@@ -4,6 +4,7 @@ from lojavirtual.inventory import models
 
 
 @pytest.mark.dbfixture
+# Carrega estes parametros para rodar no teste abaixo
 @pytest.mark.parametrize(
     "id, name, slug, is_active",
     [
@@ -15,6 +16,10 @@ from lojavirtual.inventory import models
 def test_inventory_category_dbfixture(
     db, db_fixture_setup, id, name, slug, is_active
 ):
+    """
+    Popula o banco de dados através da fixture 'db_fixture_setup' (somente na sessão atual, depois apaga) e
+    compara os valores no banco de dados com o os do parametrize acima.
+    """
     result = models.Category.objects.get(id=id)
     assert result.name == name
     assert result.slug == slug
@@ -32,6 +37,10 @@ def test_inventory_category_dbfixture(
 def test_inventory_db_category_insert_data(
     db, category_factory, slug, is_active
 ):
+    """
+    Cria dados aleatorios atraves da 'category_factory',
+    insere esses dados no bando de dados e verifica se coincidem.
+    """
     result = category_factory.create(slug=slug, is_active=is_active)
     assert result.slug == slug
     assert result.is_active == is_active
