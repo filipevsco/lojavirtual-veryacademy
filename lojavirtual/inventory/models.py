@@ -1,8 +1,3 @@
-from email.policy import default
-from enum import unique
-from hashlib import blake2b
-from unicodedata import decimal
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
@@ -123,7 +118,7 @@ class ProductType(models.Model):
     """
 
     name = models.CharField(
-        max_lenght=255,
+        max_length=255,
         unique=True,
         null=False,
         blank=False,
@@ -139,15 +134,15 @@ class Brand(models.Model):
     """
     Product Brand table
     """
+
     name = models.CharField(
         max_length=255,
         unique=True,
         null=False,
         blank=False,
-        verbose_name=_("brand name")
-        help_text=_("format: required, unique, max-255")
+        verbose_name=_("brand name"),
+        help_text=_("format: required, unique, max-255"),
     )
-
 
 
 class ProductInventory(models.Model):
