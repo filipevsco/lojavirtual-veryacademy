@@ -1,5 +1,5 @@
-from statistics import mode
-from tabnanny import verbose
+from enum import unique
+from hashlib import blake2b
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -113,3 +113,15 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductInventory(models.Model):
+
+    sku = models.CharField(
+        max_length=20,
+        unique=True,
+        null=False,
+        blank=False,
+        verbose_name=_("stock keeping unit"),
+        help_text=_(""format: required, unique, max-20")
+    )
