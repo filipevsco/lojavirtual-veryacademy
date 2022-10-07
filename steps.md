@@ -87,4 +87,8 @@ Criando um comando personalizado.
 1. Criar um novo app django. Nesse caso nomeado como `demo`;
 2. Excluir arquivos inúteis como: `views.py`, `tests.py`, `models.py` e `admin.py`;
 3. Criar novas pastas dentro da pasta `demo` nomeada como `/management/commands/`;
-4. Criar arquivo `load-fixtures.py` dentro da pasta commands;
+4. Criar arquivo `load-fixtures.py` dentro da pasta commands -> Dentro deste arquivo poderemos configurar uma 
+sequência de comandos que queremos executar ao digitar `> python manage.py load-fixtures`
+  Dentro deste arquivo devemos importar a função `call-command` de django.core.management e
+  importar também a classe `BaseCommand`;
+5. Criamos a classe Command herdando de BaseCommand para chamar todas os comandos que queremos rodar.
