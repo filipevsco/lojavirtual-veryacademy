@@ -38,5 +38,14 @@ class ProductFactory(factory.django.DjangoModelFactory):
                 self.category.add(cat)
 
 
+class ProductInventoryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.ProductInventory
+
+    sku = factory.Sequence(lambda n: "sku_%d" % n)
+    upc = factory.Sequence(lambda n: "upc_%d" % n)
+    product_type = factory.SubFactory(ProductTypeFactory)
+
+
 register(CategoryFactory)
 register(ProductFactory)
