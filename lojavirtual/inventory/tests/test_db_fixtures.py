@@ -119,7 +119,7 @@ def test_inventory_db_product_insert_data(
         (
             1,
             "7633969397",
-            "934093851374",
+            "934093051374",
             1,
             1,
             1,
@@ -128,8 +128,8 @@ def test_inventory_db_product_insert_data(
             92.00,
             46.00,
             987,
-            "2021-09-04 22:14:14",
-            "2021-09-04 22:14:14",
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
         ),
         (
             8616,
@@ -143,8 +143,8 @@ def test_inventory_db_product_insert_data(
             84.00,
             42.00,
             929,
-            "2021-09-04 22:14:14",
-            "2021-09-04 22:14:14",
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
         ),
     ],
 )
@@ -178,8 +178,8 @@ def test_inventory_db_product_inventory_dataset(
     assert result.store_price == store_price
     assert result.sale_price == sale_price
     assert result.weight == weight
-    assert result.created_at == created_at
-    assert result.updated_at == updated_at
+    assert result_created_at == created_at
+    assert result_updated_at == updated_at
 
 
 def test_inventory_db_product_inventory_insert_data(

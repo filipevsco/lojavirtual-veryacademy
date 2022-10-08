@@ -62,7 +62,7 @@ class ProductInventoryFactory(factory.django.DjangoModelFactory):
     product = factory.SubFactory(ProductFactory)
     brand = factory.SubFactory(BrandFactory)
     is_active = True
-    retail_proce = 97
+    retail_price = 97
     store_price = 92
     sale_price = 46
     weight = 987
