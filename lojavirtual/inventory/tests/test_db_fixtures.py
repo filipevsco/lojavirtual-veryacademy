@@ -150,7 +150,7 @@ def test_inventory_db_product_insert_data(
 )
 def test_inventory_db_product_inventory_dataset(
     db,
-    django_db_setup,
+    db_fixture_setup,
     id,
     sku,
     upc,
