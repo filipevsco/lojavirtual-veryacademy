@@ -191,7 +191,7 @@ class ProductInventory(models.Model):
             },
         },
     )
-    sale_price = models.DecimalField(
+    store_price = models.DecimalField(
         max_digits=5,
         decimal_places=2,
         unique=False,
@@ -205,7 +205,7 @@ class ProductInventory(models.Model):
             },
         },
     )
-    retail_price = models.DecimalField(
+    sale_price = models.DecimalField(
         max_digits=5,
         decimal_places=2,
         unique=False,
