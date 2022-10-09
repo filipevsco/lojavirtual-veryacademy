@@ -241,7 +241,7 @@ def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
         (
             1,
             1,
-            "image/default.png",
+            "images/default.png",
             "a default image solid color",
             1,
             "2021-09-04 22:14:18",
@@ -250,8 +250,8 @@ def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
         (
             8616,
             8616,
-            "image/default.png",
-            "a default image solif color",
+            "images/default.png",
+            "a default image solid color",
             1,
             "2021-09-04 22:14:18",
             "2021-09-04 22:14:18",
@@ -283,7 +283,7 @@ def test_inventory_db_media_dataset(
 def test_inventory_db_media_insert_data(db, media_factory):
 
     new_media = media_factory.create(product_inventory__sku="123456789")
-    assert new_media.product_invetory.sku == "123456789"
+    assert new_media.product_inventory.sku == "123456789"
     assert new_media.image == "images/default.png"
     assert new_media.alt_text == "a default image solid color"
     assert new_media.is_feature == 1
