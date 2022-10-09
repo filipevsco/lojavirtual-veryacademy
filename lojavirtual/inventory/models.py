@@ -239,3 +239,15 @@ class ProductInventory(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class Media(models.Model):
+    """
+    Product Image Table
+    """
+
+    product_inventory = models.ForeignKey(
+        ProductInventory,
+        on_delete=models.PROTECT,
+        related_name="media_product_invetory",
+    )

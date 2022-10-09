@@ -260,7 +260,7 @@ def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
 )
 def test_inventory_db_media_dataset(
     db,
-    django_db_setup,
+    db_fixture_setup,
     id,
     product_inventory,
     image,
@@ -284,3 +284,6 @@ def test_inventory_db_media_insert_data(db, media_factory):
 
     new_media = media_factory.create(product_inventory__sku="123456789")
     assert new_media.product_invetory.sku == "123456789"
+    assert new_media.image == "images/default.png"
+    assert new_media.alt_text == "a default image solid color"
+    assert new_media.is_feature == 1
