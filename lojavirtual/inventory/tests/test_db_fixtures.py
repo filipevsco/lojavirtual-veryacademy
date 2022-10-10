@@ -291,7 +291,8 @@ def test_inventory_db_media_insert_data(db, media_factory):
 
 @pytest.mark.dbfixture
 @pytest.mark.parametrize(
-    "id, product_inventory, last_checked, units, units_sold"[
+    "id, product_inventory, last_checked, units, units_sold",
+    [
         (1, 1, "2021-09-04 22:14:18", 135, 0),
         (8616, 8616, "2021-09-04 22:14:18", 100, 0),
     ],
