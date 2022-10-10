@@ -93,3 +93,18 @@ sequência de comandos que queremos executar ao digitar `> python manage.py load
   importar também a classe `BaseCommand`;
 5. Criamos a classe Command herdando de BaseCommand para chamar todas os comandos que queremos rodar.
 
+
+#### SEQUÊNCIA DE DESENVOLVIMENTO (TDD)
+
+##### 1. CONSTRUÇÃO DOS TESTES:
+  Em `test_db_fixtures.py` elaboramos alguns testes:
+
+      a - teste de consulta do bando de dados: o db será populado com os dados `.json` (somente durante o teste = "Session") e através do **parametrize** verificamos se coincidem com o esperado. 
+
+      b - teste de inserção de dados: com a ferramenta `factory` criamos dados e testamos a inserção no db verificamo se os mesmo estão persistindo.
+
+      c - teste de atributo unico (uniqueness): tentamos inserir duas vezes um atributo unico esperando a mensagem de erro.
+
+  Após a elaboração dos testes, precisamos construir as **factories** e arquivos `json`necessários para realização dos testes.
+
+  Em seguida, construímos nossos models e realizamos os testes. 
