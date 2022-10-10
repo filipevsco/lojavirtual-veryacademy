@@ -348,3 +348,25 @@ class ProductAttribute(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductAttributeValue(models.Model):
+    """
+    Product Attribute Table
+    """
+
+    product_attribute = models.ForeignKey(
+        ProductAttribute,
+        on_delete=models.PROTECT,
+    )
+    attribute_value = models.CharField(
+        max_length=255,
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("attribute value"),
+        help_text=_("format: required, max-255"),
+    )
+
+    def __str__(self):
+        return f"{self.product_attribute.name} : {self.attribute_value}"
