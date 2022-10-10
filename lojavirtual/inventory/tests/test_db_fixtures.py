@@ -1,5 +1,3 @@
-from unicodedata import name
-
 import pytest
 from django.db import IntegrityError
 from lojavirtual.inventory import models
@@ -326,32 +324,32 @@ def test_inventory_db_stock_insert_data(db, stock_factory):
 @pytest.mark.parametrize(
     "id, name, description",
     [
-        (1, "men shoe size", "men shoe size"),
+        (1, "men-shoe-size", "men shoe size"),
     ],
 )
-def test_inventory_db_porduct_attribute_dataset(
+def test_inventory_db_product_attribute_dataset(
     db,
-    db_fiture_setup,
+    db_fixture_setup,
     id,
     name,
     description,
 ):
-    result = ProductAttribute.objects.get(id=id)
+    result = models.ProductAttribute.objects.get(id=id)
     assert result.name == name
     assert result.description == description
 
 
 def test_inventory_db_product_attribute_insert_data(
-    db, product_atribute_factory
+    db, product_attribute_factory
 ):
-    new_attribute = product_atribute_factory.create()
-    assert new_attribute.name == "atribute_name_0"
-    assert new_attribute.description == "description_0"
+    new_attribute = product_attribute_factory.create()
+    assert new_attribute.name == "attribute_name_0"
+    assert new_attribute.description == "attribute_description_0"
 
 
 def test_inventory_db_product_attribute_uniqueness_integrity(
     db, product_attribute_factory
 ):
-    product_attribute_factory.create("not_unique")
+    product_attribute_factory.create(name="not_unique")
     with pytest.raises(IntegrityError):
         product_attribute_factory.create(name="not_unique")
