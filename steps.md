@@ -112,3 +112,9 @@ sequência de comandos que queremos executar ao digitar `> python manage.py load
 
   #### Product Filter Prototype (part 3)
 
+Consultas básicas e complexas no bando de dados.
+
+
+### POSTGRESQL via DOCKER
+
+1. Criado arquivo `docker-compose.yml` na raiz do projeto. Este arquivo será responsável para dizer ao docker instalar o banco de dados postgres.
