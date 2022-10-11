@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Categories</h1>
+
+{% for x in data %}
+
+    {{x.name}}
+
+{% endfor %}
+
+{% endblock content %}

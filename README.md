@@ -17,3 +17,5 @@ Alguns dos recursos utilizados nessa aplicação:
 - Factoryboy;
 - Faker;
 - MPPT;
+- Docker;
+- Postgresql;

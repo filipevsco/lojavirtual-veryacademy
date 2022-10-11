@@ -117,4 +117,5 @@ Consultas básicas e complexas no bando de dados.
 
 ### POSTGRESQL via DOCKER
 
-1. Criado arquivo `docker-compose.yml` na raiz do projeto. Este arquivo será responsável para dizer ao docker instalar o banco de dados postgres.
+1. Criado arquivo `docker-compose.yml` na raiz do projeto. Este arquivo será um script responsável para dizer ao docker instalar o banco de dados postgresql.
+2. para roda basta digitar no shell `docker compose up`
