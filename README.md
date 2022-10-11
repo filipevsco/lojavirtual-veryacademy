@@ -1,5 +1,6 @@
 # lojavirtual-veryacademy
 Desenvolvimento de um Ecommerce seguindo tutorial da Very Academy no Youtube.
+Toda a aplicação foi desenvolvida pelo método **TDD (Test Driven Development)**.
 
 ## DATABASE
 
