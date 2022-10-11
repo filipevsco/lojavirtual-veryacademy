@@ -108,3 +108,7 @@ sequência de comandos que queremos executar ao digitar `> python manage.py load
   Após a elaboração dos testes, precisamos construir as **factories** e arquivos `json`necessários para realização dos testes.
 
   Em seguida, construímos nossos models e realizamos os testes. 
+
+
+  #### Product Filter Prototype (part 3)
+
