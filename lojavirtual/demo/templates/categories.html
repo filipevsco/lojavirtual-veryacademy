@@ -5,7 +5,7 @@
 
 {% for x in data %}
 
-    {{x.name}}
+    <a href="{% url 'demo:product_by_category' category=x.slug %}">{{x.name}}</a>
 
 {% endfor %}
 

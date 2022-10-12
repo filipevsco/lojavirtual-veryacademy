@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Product by Category</h1>
+
+<ul>
+{% for x in data %}
+
+<li>{{ x }}</li>
+
+{% endfor%}
+</ul>
+
+{% endblock content %}
+
+
+
