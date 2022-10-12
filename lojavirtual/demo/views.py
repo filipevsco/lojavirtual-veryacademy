@@ -14,8 +14,17 @@ def category(request):
 
 def product_by_category(request, category):
 
-    data = models.Product.objects.filter(category__name=category)
-
-    print(data)
+    data = models.Product.objects.filter(category__name=category).values(
+        "id", "name", "slug", "category__name", "product__store_price"
+    )
 
     return render(request, "product_by_category.html", {"data": data})
+
+
+def product_detail(request, slug):
+
+    data = models.ProductInventory.objects.filter(product__slug=slug).values(
+        "id", "product__name"
+    )
+
+    return render(request, "product_detail.html", {"data": data})
