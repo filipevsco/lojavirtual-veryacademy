@@ -24,7 +24,11 @@ def product_by_category(request, category):
 def product_detail(request, slug):
 
     data = models.ProductInventory.objects.filter(product__slug=slug).values(
-        "id", "product__name"
+        "id",
+        "sku",
+        "product__name",
+        "store_price",
+        "product_inventory__units",
     )
 
     return render(request, "product_detail.html", {"data": data})
