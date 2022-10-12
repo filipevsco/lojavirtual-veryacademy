@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render
 from lojavirtual.inventory import models
 
@@ -23,12 +24,24 @@ def product_by_category(request, category):
 
 def product_detail(request, slug):
 
-    data = models.ProductInventory.objects.filter(product__slug=slug).values(
-        "id",
-        "sku",
-        "product__name",
-        "store_price",
-        "product_inventory__units",
+    filter_arguments = []
+
+    if request.GET:
+        for value in request.GET.values():
+            filter_arguments.append(value)
+
+    data = (
+        models.ProductInventory.objects.filter(product__slug=slug)
+        .filter(attribute_values__attribute_value__in=filter_arguments)
+        .annotate(num_tags=Count("attribute_values"))
+        .filter(num_tags=len(filter_arguments))
+        .values(
+            "id",
+            "sku",
+            "product__name",
+            "store_price",
+            "product_inventory__units",
+        )
     )
 
     return render(request, "product_detail.html", {"data": data})
