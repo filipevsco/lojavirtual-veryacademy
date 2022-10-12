@@ -16,4 +16,6 @@ def product_by_category(request, category):
 
     data = models.Product.objects.filter(category__name=category)
 
+    print(data)
+
     return render(request, "product_by_category.html", {"data": data})
