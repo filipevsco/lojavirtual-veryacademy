@@ -45,9 +45,13 @@ def product_detail(request, slug):
         )
     )
 
-    y = models.ProductInventory.objects.filter(product__slug=slug).values(
-        "attribute_values__product_attribute__name",
-        "attribute_values__attribute_value",
+    y = (
+        models.ProductInventory.objects.filter(product__slug=slug)
+        .distinct()
+        .values(
+            "attribute_values__product_attribute__name",
+            "attribute_values__attribute_value",
+        )
     )
 
     z = (

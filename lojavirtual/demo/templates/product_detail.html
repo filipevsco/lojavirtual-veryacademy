@@ -14,20 +14,22 @@
 {% endfor%}
 </ul>
 
+<ul>
 {% for x in z %}
-
+    <li>
     {{x.product_attribute__name}}
 
-{% endfor %}
-
-<ul>
-    {% for x in y %}
-    
-    <li>{{ x.attribute_values__product_attribute__name}} : {{ x.attribute_values__attribute_value }}</li>
-
-
+    <ul>
+    {% for a in y %}
+        {% if a.attribute_values__product_attribute__name == x.product_attribute__name %}
+            <li>{{a.attribute_values__attribute_value }}</li>
+        {% endif %}
     {% endfor %}
     </ul>
+    
+    </li>
+{% endfor %}
+</ul>
 
 
 {% endblock content %}
