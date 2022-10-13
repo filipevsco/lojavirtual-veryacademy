@@ -30,6 +30,7 @@ def product_detail(request, slug):
         for value in request.GET.values():
             filter_arguments.append(value)
 
+    print(filter_arguments)
     data = (
         models.ProductInventory.objects.filter(product__slug=slug)
         .filter(attribute_values__attribute_value__in=filter_arguments)
@@ -43,5 +44,6 @@ def product_detail(request, slug):
             "product_inventory__units",
         )
     )
+    print(data)
 
     return render(request, "product_detail.html", {"data": data})
