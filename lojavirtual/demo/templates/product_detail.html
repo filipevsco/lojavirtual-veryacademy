@@ -11,9 +11,23 @@
 <li>{{ x.sku }}</li>
 <li>{{ x.product_inventory__units }}</li>
 
-
-
 {% endfor%}
 </ul>
+
+{% for x in z %}
+
+    {{x.product_attribute__name}}
+
+{% endfor %}
+
+<ul>
+    {% for x in y %}
+    
+    <li>{{ x.attribute_values__product_attribute__name}} : {{ x.attribute_values__attribute_value }}</li>
+
+
+    {% endfor %}
+    </ul>
+
 
 {% endblock content %}
