@@ -30,20 +30,31 @@ def product_detail(request, slug):
         for value in request.GET.values():
             filter_arguments.append(value)
 
-    print(filter_arguments)
-    data = (
-        models.ProductInventory.objects.filter(product__slug=slug)
-        .filter(attribute_values__attribute_value__in=filter_arguments)
-        .annotate(num_tags=Count("attribute_values"))
-        .filter(num_tags=len(filter_arguments))
-        .values(
-            "id",
-            "sku",
-            "product__name",
-            "store_price",
-            "product_inventory__units",
+        data = (
+            models.ProductInventory.objects.filter(product__slug=slug)
+            .filter(attribute_values__attribute_value__in=filter_arguments)
+            .annotate(num_tags=Count("attribute_values"))
+            .filter(num_tags=len(filter_arguments))
+            .values(
+                "id",
+                "sku",
+                "product__name",
+                "store_price",
+                "product_inventory__units",
+            )
         )
-    )
+    else:
+        data = (
+            models.ProductInventory.objects.filter(product__slug=slug)
+            .filter(is_default=True)
+            .values(
+                "id",
+                "sku",
+                "product__name",
+                "store_price",
+                "product_inventory__units",
+            )
+        )
 
     y = (
         models.ProductInventory.objects.filter(product__slug=slug)
