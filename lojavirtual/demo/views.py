@@ -1,3 +1,4 @@
+from django.contrib.postgres.aggregates import ArrayAgg
 from django.db.models import Count
 from django.shortcuts import render
 from lojavirtual.inventory import models
@@ -44,6 +45,7 @@ def product_detail(request, slug):
             )
         )
     else:
+
         data = (
             models.ProductInventory.objects.filter(product__slug=slug)
             .filter(is_default=True)
@@ -54,7 +56,10 @@ def product_detail(request, slug):
                 "store_price",
                 "product_inventory__units",
             )
-        )
+            .annotate(field_a=ArrayAgg("attribute_values__attribute_value"))
+        ).get()
+
+        print(data)
 
     y = (
         models.ProductInventory.objects.filter(product__slug=slug)
