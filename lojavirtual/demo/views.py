@@ -25,13 +25,28 @@ def product_by_category(request, category):
 
 def product_detail(request, slug):
 
+    # x = models.Product.objects.filter(slug=slug)
+
+    # x = models.ProductInventory.objects.filter(product__slug=slug).values("id", "product__name", "store_price", "is_default", "attribute_values__attribute_value")
+
+    # Using chained filters approach
+    # x = models.ProductInventory.objects.filter(product__slug=slug).filter(attribute_values__attribute_value="red").filter(attribute_values__attribute_value=5).select_related('product')
+
+    # from django.db.models import Count
+    # filter_arguments = [5, "red"]
+    # x = models.ProductInventory.objects.filter(product__slug=slug).filter(attribute_values__attribute_value__in=filter_arguments).annotate(num_tags=Count('attribute_values')).filter(num_tags=len(filter_arguments))
+
+    # Dynamic Filter
     filter_arguments = []
 
     if request.GET:
         for value in request.GET.values():
             filter_arguments.append(value)
 
-        data = (
+        from django.contrib.postgres.aggregates import ArrayAgg
+        from django.db.models import Count
+
+        x = (
             models.ProductInventory.objects.filter(product__slug=slug)
             .filter(attribute_values__attribute_value__in=filter_arguments)
             .annotate(num_tags=Count("attribute_values"))
@@ -43,10 +58,14 @@ def product_detail(request, slug):
                 "store_price",
                 "product_inventory__units",
             )
+            .annotate(field_a=ArrayAgg("attribute_values__attribute_value"))
+            .get()
         )
     else:
 
-        data = (
+        from django.contrib.postgres.aggregates import ArrayAgg
+
+        x = (
             models.ProductInventory.objects.filter(product__slug=slug)
             .filter(is_default=True)
             .values(
@@ -57,9 +76,8 @@ def product_detail(request, slug):
                 "product_inventory__units",
             )
             .annotate(field_a=ArrayAgg("attribute_values__attribute_value"))
-        ).get()
-
-        print(data)
+            .get()
+        )
 
     y = (
         models.ProductInventory.objects.filter(product__slug=slug)
@@ -74,10 +92,10 @@ def product_detail(request, slug):
         models.ProductTypeAttribute.objects.filter(
             product_type__product_type__product__slug=slug
         )
-        .values("product_attribute__name")
         .distinct()
+        .values("product_attribute__name")
     )
 
     return render(
-        request, "product_detail.html", {"data": data, "y": y, "z": z}
+        request, "product_detail.html", {"x": x, "filter": y, "z": z}
     )
