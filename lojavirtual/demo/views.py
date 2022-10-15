@@ -1,5 +1,3 @@
-from django.contrib.postgres.aggregates import ArrayAgg
-from django.db.models import Count
 from django.shortcuts import render
 from lojavirtual.inventory import models
 
