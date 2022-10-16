@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "lojavirtual.demo",
     # Aplicações externas
     "mptt",
+    "django_elasticsearch_dsl",
 ]
 
 MIDDLEWARE = [

@@ -144,5 +144,7 @@ Ela trabalha criando indices(index) a partir dos tipos de dados apra otimizar as
 #### Implementação
 
 Para este projeto criaremos outro container docker para hospedar a API Elasticsearch:
-no arquivo `docker-compose.yml` preencher os dados do servidor elasticsearch que será carregado no docker.
+- No arquivo `docker-compose.yml` preencher os dados do servidor elasticsearch que será carregado no docker.
 
+- Instalar o pacote via terminal: `pip install django-elasticsearch-dsl` (nao esquecer de incluir nos app do settings.py);
+-rodar o docker para ver se funcionou corretamente;
