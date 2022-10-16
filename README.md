@@ -19,3 +19,5 @@ Alguns dos recursos utilizados nessa aplicação:
 - MPPT;
 - Docker;
 - Postgresql;
+- Elasticsearch;
+- Bootstrap;

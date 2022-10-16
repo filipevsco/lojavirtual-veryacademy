@@ -125,3 +125,24 @@ Consultas básicas e complexas no bando de dados.
 2. para roda basta digitar no shell `docker compose up`
 
 
+### ELASTICSEARCH (part 4)
+
+Ferramenta especializada em consulta em banco de dados focada em desempenho. Permite pesquisar e analizar grande volume de dados.
+Ela trabalha criando indices(index) a partir dos tipos de dados apra otimizar as consulta aos dados.
+
+((((index) shard) node ) Cluster)
+
+- Index -> Coleção de documentos que tem características semelhantes; (precisa ser unico - unique name);
+- Shard -> È a capacidade de dividir um indice em fragmentos menores;
+- Node -> É um unico servidor/instancia do elasticsearc que faz parte de um cluster;
+- Cluster -> Composto por um ou mas nós, cada cluster um um unico atctive master node;
+
+(Esta API é escrita em JAVA, portanto usa JVM.)
+
+
+
+#### Implementação
+
+Para este projeto criaremos outro container docker para hospedar a API Elasticsearch:
+no arquivo `docker-compose.yml` preencher os dados do servidor elasticsearch que será carregado no docker.
+
