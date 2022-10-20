@@ -14,7 +14,7 @@ services:
 
   esearch:
     container_name: search
-    image: elasticsearch:8.4.3
+    image: elasticsearch:7.17.6
     environment:
       - discovery.type=single-node
     ports:
