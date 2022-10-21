@@ -1,4 +1,6 @@
-from django_elasticsearch_dsl import Document
+from dataclasses import fields
+
+from django_elasticsearch_dsl import Document, fields
 from django_elasticsearch_dsl.registries import registry
 
 from .models import ProductInventory
@@ -6,6 +8,9 @@ from .models import ProductInventory
 
 @registry.register_document
 class ProductInventoryDocument(Document):
+
+    product = fields.ObjectField(properties={"name": fields.TextField()})
+
     class Index:
         name = "productinventory"
 
@@ -16,3 +21,17 @@ class ProductInventoryDocument(Document):
             "id",
             "sku",
         ]
+
+
+# para teste de pesquisa
+# curl -X GET "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+# {
+#     "query": {
+#         "bool": {
+#             "must": [
+#                 { "match": { "sku": "7633969397"}}
+#             ]
+#         }
+#     }
+# }
+# '
