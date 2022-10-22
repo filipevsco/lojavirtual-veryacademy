@@ -92,3 +92,8 @@ criar um novo app 'drf' dentro da pasta "lojavortual" e instalar a biblioteca 'd
 registar no settings.py "rest_framework" e "lojavirtual.drf"
 
 no apps.py do drf tbm colocar o caminho total "lojavirtual.drf"
+
+
+#### serializers
+
+conseguem pegar os dados consultados do bando de dados e entrega-los para o front end em um formato mais facil de renderizar pep javascript por exemplo, ex: json , xml
