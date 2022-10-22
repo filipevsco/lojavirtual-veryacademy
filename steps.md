@@ -88,4 +88,6 @@ criar um novo app 'drf' dentro da pasta "lojavortual" e instalar a biblioteca 'd
 >cd ..
 >pip install djangorestframework
 
+registar no settings.py "rest_framework"
+
 '''
