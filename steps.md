@@ -87,7 +87,8 @@ criar um novo app 'drf' dentro da pasta "lojavortual" e instalar a biblioteca 'd
 >django-admin startapp drf
 >cd ..
 >pip install djangorestframework
+'''
 
 registar no settings.py "rest_framework" e "lojavirtual.drf"
 
-'''
+no apps.py do drf tbm colocar o caminho total "lojavirtual.drf"
