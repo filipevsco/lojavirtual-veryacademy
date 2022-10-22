@@ -79,3 +79,11 @@ criar models com relacionamentos mais facilmente
 
 
 #### utilizando DJANGO REST FRAMEWORK (DRF)
+
+Instalar o drf dentro da pasta "lojavortual":
+
+'''
+>cd /lojavirtual
+>django-admin startapp drf
+
+'''
