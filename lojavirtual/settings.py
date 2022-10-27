@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "lojavirtual.demo",
     # Aplicações externas
     "mptt",
-    "django_elasticsearch_dsl",
+    # "django_elasticsearch_dsl",
 ]
 
 MIDDLEWARE = [
@@ -144,8 +144,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
-ELASTICSEARCH_DSL = {"default": {"hosts": "localhost:9200"}}
+# ELASTICSEARCH_DSL = {"default": {"hosts": "localhost:9200"}}
