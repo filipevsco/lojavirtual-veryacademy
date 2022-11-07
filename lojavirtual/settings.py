@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "lojavirtual.demo",
     # Aplicações externas
     "mptt",
+    "rest_framework",
     # "django_elasticsearch_dsl",
 ]
 
