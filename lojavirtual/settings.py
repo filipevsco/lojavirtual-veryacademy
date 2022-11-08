@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     # Aplicações locais
     "lojavirtual.dashboard",
     "lojavirtual.inventory",
-    "lojavirtual.demo",
     "lojavirtual.drf",
+    # Aplicações demo
+    "lojavirtual.demo",
     # Aplicações externas
     "mptt",
     "rest_framework",
