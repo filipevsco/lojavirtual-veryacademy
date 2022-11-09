@@ -96,4 +96,4 @@ no apps.py do drf tbm colocar o caminho total "lojavirtual.drf"
 
 #### serializers
 
-conseguem pegar os dados consultados do bando de dados e entrega-los para o front end em um formato mais facil de renderizar pep javascript por exemplo, ex: json , xml
+conseguem pegar os dados consultados do bando de dados e entrega-los para o front-end em um formato mais facil de renderizar para javascript por exemplo, ex: json , xml
