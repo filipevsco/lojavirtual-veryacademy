@@ -1,8 +1,8 @@
 from rest_framework import mixins, permissions, viewsets
 from rest_framework.response import Response
 
-from lojavirtual.drf.serializer import AllProducts
-from lojavirtual.inventory.models import Product
+from lojavirtual.drf.serializer import AllProducts, ProductInventorySerializer
+from lojavirtual.inventory.models import Product, ProductInventory
 
 
 class AllProductsViewset(
@@ -20,3 +20,9 @@ class AllProductsViewset(
         queryset = Product.objects.filter(category__slug=slug)[:10]
         serializer = AllProducts(queryset, many=True)
         return Response(serializer.data)
+
+
+class ProductInventoryViewset(viewsets.GenericViewSet, mixins.ListModelMixin):
+
+    queryset = ProductInventory.objects.all()
+    serializer_class = ProductInventorySerializer

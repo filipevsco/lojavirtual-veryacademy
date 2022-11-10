@@ -6,6 +6,7 @@ from lojavirtual.drf import views
 
 router = routers.DefaultRouter()
 router.register(r"api", views.AllProductsViewset, basename="allproducts")
+router.register(r"product", views.ProductInventoryViewset, basename="products")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
