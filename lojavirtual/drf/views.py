@@ -6,7 +6,7 @@ from lojavirtual.inventory.models import Product
 
 class AllProductsViewset(viewsets.ModelViewSet):
 
-    queryset = Product.objects.all()[:10]
+    queryset = Product.objects.all()
     serializer_class = AllProducts
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     lookup_field = "slug"
