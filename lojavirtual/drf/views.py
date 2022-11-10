@@ -1,10 +1,14 @@
-from rest_framework import permissions, viewsets
+from rest_framework import mixins, permissions, viewsets
 
 from lojavirtual.drf.serializer import AllProducts
 from lojavirtual.inventory.models import Product
 
 
-class AllProductsViewset(viewsets.ModelViewSet):
+class AllProductsViewset(
+    viewsets.GenericViewSet,
+    mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+):
 
     queryset = Product.objects.all()
     serializer_class = AllProducts
